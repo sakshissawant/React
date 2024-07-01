@@ -2,6 +2,7 @@ import React from "react";
 
 import InputFields from "./components/InputFields";
 import Table from "./components/Table";
+import "./App.css";
 
 const App = () => {
   return (

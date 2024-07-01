@@ -15,7 +15,7 @@ function Table() {
     <div>
       <table>
         <tbody>
-          <tr>
+          <tr id="first">
             <td>Sr. No.</td>
             <td>Title</td>
             <td>Description</td>
@@ -29,6 +29,8 @@ function Table() {
                 <td>{info.description}</td>
                 <td>
                   <button
+                    id="delete"
+                    className="button"
                     onClick={() => {
                       deleteData(info.index);
                     }}
