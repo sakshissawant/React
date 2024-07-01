@@ -21,11 +21,13 @@ textarea {
 
 input {
   width: 40%;
+  cursor: text;
 }
 
 textarea {
   width: 70%;
   height: 200px;
+  cursor: text;
 }
 
 table {
@@ -43,4 +45,8 @@ td {
 
 tr#first {
   border-bottom: 4px solid;
+}
+
+tr.rows:hover {
+  background-color: rgb(200, 200, 200);
 }

@@ -3,12 +3,12 @@ import React from "react";
 import data from "../db.json";
 
 function Table() {
-  function deleteData(index) {
-    fetch("http://localhost:3000/todo", { method: "DELETE" }).then(
-      (response) => {
-        response.json();
-      }
-    );
+  function deleteData(id) {
+    fetch("http://localhost:3000/todo/" + id, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: null,
+    });
   }
 
   return (
@@ -23,8 +23,8 @@ function Table() {
           </tr>
           {data.todo.map((info) => {
             return (
-              <tr key={info.id}>
-                <td>{info.id}</td>
+              <tr key={info.id} className="rows" draggable>
+                <td>{data.todo.indexOf(info) + 1}</td>
                 <td>{info.title}</td>
                 <td>{info.description}</td>
                 <td>
@@ -32,7 +32,7 @@ function Table() {
                     id="delete"
                     className="button"
                     onClick={() => {
-                      deleteData(info.index);
+                      deleteData(info.id);
                     }}
                   >
                     delete

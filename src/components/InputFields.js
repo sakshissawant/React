@@ -48,18 +48,19 @@ const InputFields = () => {
           }}
         />
         <br />
-        <button className="button">Save</button>
+        <button type="submit" className="button">
+          Save
+        </button>
+        <button
+          className="button"
+          onClick={() => {
+            setTitle("");
+            setDesc("");
+          }}
+        >
+          Clear
+        </button>
       </form>
-
-      <button
-        className="button"
-        onClick={() => {
-          setTitle("");
-          setDesc("");
-        }}
-      >
-        Clear
-      </button>
     </div>
   );
 };
